@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+<ModulePrefs title="Google.com" />
+<Content type="html"><![CDATA[
 <!DOCTYPE html>
 
 <html lang="en-us">
@@ -776,9 +780,9 @@ function RequestingEnvironmentData(sendback) {
 }
 
 window.addEventListener('beforeunload', (event) => {
-	if(myGameInstance != null) 
-		myGameInstance.SendMessage('YandexGame', '_SaveProgress'); 
-	});
+    if(myGameInstance != null) 
+        myGameInstance.SendMessage('YandexGame', '_SaveProgress'); 
+    });
 
 
 var playerData = 'noData';
@@ -871,3 +875,7 @@ function OpenAuthDialog() {
     </script>
 </body>
 </html>
+
+
+]]></Content>
+</Module>
