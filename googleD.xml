@@ -114,7 +114,7 @@
 
         // Фоновое изображение при загрузке игры. При сборке билда код меняется взависимости от настроек проекта.
         
-        loadingCover.style.background = "url('https://cdn.jsdelivr.net/gh/v-classroom-googl/selschool@main/') center / cover";
+        loadingCover.style.background = "url('https://cdn.jsdelivr.net/gh/v-classroom-googl/selschool@main/background.jpg') center / cover";
 
         loadingCover.style.display = "";
 
