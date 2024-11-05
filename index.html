@@ -1,20 +1,172 @@
+<!DOCTYPE html>
 
-<!doctype html>
-<html>
-<head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover' />
-    <meta charset='utf-8'>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="manifest" href="manifest.json">
-    <style></style>
-    <title>Slice Master</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="playcanvas-stable.min.js"></script>
-    <script src="settings.js"></script>
+<html lang="en-us">
+<head><meta http-equiv="Content-Security-Policy" content="child-src 'self' *.allwebgames.com *.gametok.com *.juegocasa.com *.playhop.com *.wowspiele.de *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com allwebgames.com blob: gametok.com juegocasa.com playhop.com wowspiele.de yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yango.com; connect-src 'self' *.allwebgames.com *.eponesh.com *.gameanalytics.com *.gametok.com *.juegocasa.com *.playhop.com *.unity3d.com *.website.yandexcloud.net *.wowspiele.de *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.net *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com allwebgames.com blob: data: gametok.com juegocasa.com playhop.com storage.yandexcloud.net wowspiele.de wss://*.eponesh.com:* www.google-analytics.com www.googletagmanager.com yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yandexmetrica.com yango.com yastatic.net; default-src 'self'; font-src 'self' *.allwebgames.com *.gametok.com *.juegocasa.com *.playhop.com *.website.yandexcloud.net *.wowspiele.de *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com allwebgames.com data: fonts.gstatic.com gametok.com juegocasa.com playhop.com storage.yandexcloud.net wowspiele.de yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yango.com yastat.net yastatic.net; frame-src 'self' *.allwebgames.com *.gametok.com *.juegocasa.com *.playhop.com *.website.yandexcloud.net *.wowspiele.de *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com allwebgames.com gametok.com juegocasa.com localhost playhop.com wowspiele.de yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yango.com yastatic.net; img-src 'self' *.allwebgames.com *.eponesh.com *.gametok.com *.juegocasa.com *.playhop.com *.website.yandexcloud.net *.wowspiele.de *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.net *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com allwebgames.com blob: data: gametok.com juegocasa.com playhop.com storage.yandexcloud.net wowspiele.de yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yango.com yastatic.net; media-src 'self' *.allwebgames.com *.gametok.com *.juegocasa.com *.playhop.com *.website.yandexcloud.net *.wowspiele.de *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.net *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com allwebgames.com blob: data: gametok.com juegocasa.com playhop.com storage.yandexcloud.net wowspiele.de yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yango.com; object-src 'self' *.allwebgames.com *.gametok.com *.juegocasa.com *.playhop.com *.wowspiele.de *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com allwebgames.com blob: gametok.com juegocasa.com playhop.com wowspiele.de yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yango.com; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.allwebgames.com *.eponesh.com *.gameanalytics.com *.gametok.com *.juegocasa.com *.playhop.com *.website.yandexcloud.net *.wowspiele.de *.ya.ru *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com abt.s3.yandex.net allwebgames.com blob: data: gametok.com juegocasa.com playhop.com storage.yandexcloud.net wowspiele.de www.google-analytics.com www.googletagmanager.com ya.ru yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yango.com yastatic.net; style-src 'self' 'unsafe-eval' 'unsafe-inline' *.allwebgames.com *.gametok.com *.juegocasa.com *.playhop.com *.website.yandexcloud.net *.wowspiele.de *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com allwebgames.com blob: data: fonts.googleapis.com gametok.com juegocasa.com playhop.com storage.yandexcloud.net wowspiele.de yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yango.com; worker-src 'self' *.allwebgames.com *.gametok.com *.juegocasa.com *.playhop.com *.website.yandexcloud.net *.wowspiele.de *.yandex.az *.yandex.by *.yandex.co.il *.yandex.com *.yandex.com.am *.yandex.com.ge *.yandex.com.tr *.yandex.ee *.yandex.fr *.yandex.kg *.yandex.kz *.yandex.lt *.yandex.lv *.yandex.md *.yandex.ru *.yandex.tj *.yandex.tm *.yandex.ua *.yandex.uz *.yango.com allwebgames.com blob: gametok.com juegocasa.com playhop.com storage.yandexcloud.net wowspiele.de yandex.az yandex.by yandex.co.il yandex.com yandex.com.am yandex.com.ge yandex.com.tr yandex.ee yandex.fr yandex.kg yandex.kz yandex.lt yandex.lv yandex.md yandex.ru yandex.tj yandex.tm yandex.ua yandex.uz yango.com"/>
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<title>Timokha's Forest</title>
+<link rel="shortcut icon" href="Data/favicon.ico"/>
+<link rel="stylesheet" href="Data/style.css"/>
+<!-- Audio Plugin -->
+<script type="text/javascript" src="./AudioPlugin/howler.min.js"></script>
+<script type="text/javascript" src="./AudioPlugin/WebAudio.js"></script>
+<!-- Yandex Games SDK -->
+<script src="/sdk.js"></script>
 </head>
-<body>
-    <script src="modules.js"></script>
-    <script src="start.js"></script>
-    <script src="loading.js"></script>
+<body class="dark">
+<div id="unity-container" class="unity-desktop noselect" unselectable="on">
+<canvas id="unity-canvas" class="unity-desktop noselect" unselectable="on"></canvas>
+</div>
+<div id="loading-cover" style="display:none;" class="noselect" unselectable="on">
+<div id="unity-loading-bar" class="noselect" unselectable="on">
+<div id="game-logo"><img src="game_logo.webp"/></div>
+<div class="spinner"></div>
+<div id="unity-progress-bar-empty" style="display: none;">
+<div id="unity-progress-bar-full"></div>
+</div>
+<div id="percentage-text">0%</div>
+<div id="studios-logo"><img src="studios_logo.webp" alt="Studios Logo"/></div>
+<div id="version-text">v.1.0.1.1</div>
+</div>
+</div>
+<script>
+        const buildUrl = "Build";
+        const loaderUrl = buildUrl + "/d9d605cb1c18b4ed9fb179406f02ceab.loader.js";
+        const config = {
+            dataUrl: `${buildUrl}/aaee6dd05afb5edbe23c6824f5bfcd76.data.unityweb`,
+            frameworkUrl: `${buildUrl}/4f9e8d136b65fee5cab0454b03e87cb3.framework.js.unityweb`,
+            codeUrl: `${buildUrl}/fa5e604db4613675eedce143099304d4.wasm.unityweb`,
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "1Pixel Games",
+            productName: "Timokha's Forest",
+            productVersion: "1.0.1.1"
+        };
+
+        const container = document.querySelector("#unity-container");
+        const canvas = document.querySelector("#unity-canvas");
+        const loadingCover = document.querySelector("#loading-cover");
+        const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+        const progressBarFull = document.querySelector("#unity-progress-bar-full");
+        const spinner = document.querySelector('.spinner');
+        const percentageText = document.querySelector("#percentage-text");
+
+        // Detect mobile devices
+        var userAgent = navigator.userAgent;
+        isMobile = (
+            /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(userAgent) ||
+            /\b(Android|Windows Phone|iPad|iPod)\b/i.test(userAgent) ||
+            // iPad on iOS 13 detection
+            (userAgent.includes("Mac") && "ontouchend" in document)
+        );
+        if (isMobile) {
+            container.className = "unity-mobile";
+        }
+
+        // Loading cover
+        loadingCover.style.display = "";
+
+        // Focus on touch
+        canvas.addEventListener("touchstart", () => { window.focus() });
+        canvas.addEventListener("pointerdown", () => { window.focus() });
+
+        const script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                spinner.style.display = "none";
+                progressBarEmpty.style.display = "";
+                progressBarFull.style.width = `${100 * progress}%`;
+
+                percentageText.innerText = `${Math.round(100 * progress)}%`;
+            }).then((unityInstance) => {
+                myGameInstance = unityInstance;
+                loadingCover.style.display = "none";
+
+                clearInterval(window.backgroundIntervalId);
+
+                gameLoaded = true;
+            }).catch((message) => {
+                alert(message);
+            });
+        };
+
+        // Smooth background animation with preloading
+        const backgrounds = [
+            'Backgrounds/background_0.webp',
+        ];
+
+        function preloadImages(imageArray) {
+            const imagePromises = imageArray.map(src => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.src = src;
+                    img.onload = resolve;
+                    img.onerror = reject;
+                });
+            });
+            return Promise.all(imagePromises);
+        }
+
+        preloadImages(backgrounds).then(() => {
+            let currentBackground = 0;
+            
+            if (backgrounds.length > 1) {
+                setInterval(() => {
+                    currentBackground = (currentBackground + 1) % backgrounds.length;
+                    canvas.style.background = `url("${backgrounds[currentBackground]}") center / cover`;
+                    canvas.style.transition = 'background 1s ease-in-out';
+                }, 2000);
+            }
+            else {
+                canvas.style.background = `url("${backgrounds[0]}") center / cover`;
+            }
+        }).catch(err => {
+            console.error("Failed to preload background images", err);
+        });
+
+        // Initialize game after load
+        window.onload = () => {
+            InitYandex();
+        };
+
+        // Yandex Games initialization
+        var player;
+        var lb;
+
+        function InitYandex() {
+            YaGames.init()
+                .then(ysdk => {
+                    console.log('Yandex SDK Initialized');
+                    window.ysdk = ysdk;
+
+                    InitPlayer();
+                    InitLb();
+
+                    ysdk.adv.showFullscreenAdv({
+                        callbacks: {
+                            onOpen: function () { },
+                            onClose: function (wasShown) { },
+                            onError: function (error) { }
+                        }
+                    });
+                });
+        }
+
+        function InitPlayer() {
+            ysdk.getPlayer().then(_player => {
+                console.log('Player Initialized');
+                player = _player;
+            });
+        }
+
+        function InitLb() {
+            ysdk.getLeaderboards()
+                .then(_lb => lb = _lb);
+            console.log('Leaderboard Initialized');
+        }
+
+        document.body.appendChild(script);
+    </script>
 </body>
 </html>
