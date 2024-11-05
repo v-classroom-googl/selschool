@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 <link rel="stylesheet" href="./style.css"/>
 <!-- Yandex Games SDK -->
-<script src="v2.8d94ac668f87220c58fb.js"></script>
+<script src="https://app-328096.games.s3.yandex.net/sdk.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/reverse-image-goggl/g@main/v2.272eb20751e2dc6fe4e6.js"></script>
 <style>
         /* Убираем выделение по нажатию клавиш */
         canvas:focus {
@@ -196,6 +197,8 @@
             else return false;
         }
 
+        setTimeout(StartUnityInstance_IfUnloaded, 5000);
+        
         InitYSDK();
         async function InitYSDK() {
             try {
